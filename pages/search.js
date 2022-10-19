@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { parseISO } from "date-fns";
 import InfoCard from "../components/InfoCard";
+import Map from "../components/Mapbox";
 
 const search = ({ searchResults }) => {
   const router = useRouter();
@@ -56,15 +57,14 @@ const search = ({ searchResults }) => {
             )}
           </div>
         </section>
+        <section className="hidden xl:inline-flex xl:min-w-[600px] xl:max-h-[2100px] overflow-y-hidden overflow-x-hidden">
+          <Map searchResults={searchResults} />
+        </section>
       </main>
       <Footer />
     </div>
   );
 };
-
-/*: Comment 
-console.log(formattedStartDate) = startDate=2022-10-17T22%3A00%3A00.000Z&endDate=2022-10-21T22%3A00%3A00.000Z
-*/
 
 export default search;
 
